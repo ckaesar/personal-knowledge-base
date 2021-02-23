@@ -1,5 +1,27 @@
 ## docker
 
+### docker下安装MongoDB
+
+###### 拉取MongoDB最新的镜像
+
+`$ docker pull mongo:latest`
+
+###### 运行启动命令
+
+`$ docker run -p 27017:27017 -v /Users/chengkai/data:/data/db --name mongodb -d mongo`
+
+>  -p 映射容器服务的 27017 端口到宿主机的 27017 端口。外部可以直接通过 宿主机 ip:27017 访问到 mongo 的服务
+>
+> -v 为设置容器的挂载目录，这里是将本机的“/data/mongo”目录挂载到容器中的/data/db中，作为 mongodb 的存储目录
+>
+> --name 为设置该容器的名称
+>
+> -d 设置容器以守护进程方式运行
+
+###### 查看容器启动运行情况
+
+`$ docker ps`
+
 ### docker下安装mysql
 
 ###### 查看可用的mysqll版本
