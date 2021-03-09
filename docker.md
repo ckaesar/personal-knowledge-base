@@ -1,5 +1,21 @@
 ## docker
 
+### docker下安装Redis
+
+###### 查看镜像来源
+
+`$ docker search redis `
+
+###### 获取最新版本的redis镜像
+
+`$ docker pull redis`
+
+###### 查看本地镜像
+
+`$ docker images`
+
+
+
 ### docker下安装MongoDB
 
 ###### 拉取MongoDB最新的镜像
