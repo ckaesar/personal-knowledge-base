@@ -14,7 +14,22 @@
 
 `$ docker images`
 
+###### 下载redis.conf
 
+文件[从官网下载](http://download.redis.io/redis-stable/redis.conf)
+
+redis.conf配置文件放在/Users/chengkai/opt/data/redis目录下。
+
+然后修改启动默认配置：
+
+> ```
+> bind 127.0.0.1 #注释掉这部分，用来限制redis只能本地访问
+> protected-mode no #默认yes表示开启保护模式，用来限制redis只能本地访问
+> daemonize no #默认no，改为yes意为以守护进程方式启动，可后台运行，除非kill进程（可选）；改为yes会使配置文件方式启动redis失败
+> dir /Users/chengkai/opt/data/redis/data/ #输入本地redis数据库存放文件夹（可选）
+> appendonly yes #redis持久化（可选）
+> databases 20 #数据库个数，这里设置redis最多有20个数据库
+> ```
 
 ### docker下安装MongoDB
 
