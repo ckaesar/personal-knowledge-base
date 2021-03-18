@@ -31,6 +31,34 @@ redis.conf配置文件放在/Users/chengkai/opt/data/redis目录下。
 > databases 20 #数据库个数，这里设置redis最多有20个数据库
 > ```
 
+###### 运行
+
+`$ docker run -itd --name redis-test -p 6379:6379 redis`
+
+> 说明
+>
+> -p 6379:6379：映射容器服务的 6379 端口到宿主机的 6379 端口。外部可以直接通过宿主机ip:6379 访问到 Redis 的服务。
+
+###### 进入容器
+
+`$ docker exec -it redis-test /bin/bash`
+
+###### 通过 redis-cli 连接测试使用 redis 服务
+
+`$ redis-cli`
+
+![image-20210316202610013](./pic/image-20210316202610013.png)
+
+###### 本地客户端工具Another Redis Desktop Manager
+
+下载地址：[Another Redis Desktop Manager下载地址](https://github.com/qishibo/AnotherRedisDesktopManager)
+
+###### 重要的目录
+
+> 数据目录： /data/
+>
+> 配置目录： /
+
 ### docker下安装MongoDB
 
 ###### 拉取MongoDB最新的镜像
