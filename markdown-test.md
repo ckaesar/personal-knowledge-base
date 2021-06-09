@@ -76,3 +76,13 @@ dog | bird | cat
 foo | foo  | foo
 bar | bar  | bar
 baz | baz  | baz
+
+# 整数的上标和下标
+
+$−2^{31}$
+
+$2^{31}$
+
+-2~31~
+
+2~31~
