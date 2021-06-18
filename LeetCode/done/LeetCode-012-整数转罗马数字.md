@@ -25,18 +25,36 @@
 > 链接：https://leetcode-cn.com/problems/integer-to-roman/
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-###### 解法一：解法一
+###### 解法一：从大到小取值
 
-> 描述
-
-###### 解法二：解法二
-
-> 描述
+> 将所有可能的罗马数字和对应的取值列出来，然后按照从大到小的顺序取值，直到将num的值减到为0，这时候就得到了最终的罗马数字。
 
 ```java
-public class HelloWorld{
-  public static void main(String[] args) {
-    System.out.println("hello world!");
-  }
+public class Solution {
+    public static String intToRoman(int num) {
+        // 所有可能的取值
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        // 对应的罗马数字表示
+        String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+
+        StringBuffer result = new StringBuffer();
+        for (int i = 0; i < values.length && num > 0; i++) {
+            int value = values[i];
+            String roman = romans[i];
+            while (num >= value) {
+                num -= value;
+                result.append(roman);
+            }
+        }
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(intToRoman(3));
+        System.out.println(intToRoman(4));
+        System.out.println(intToRoman(9));
+        System.out.println(intToRoman(58));
+        System.out.println(intToRoman(1994));
+    }
 }
 ```

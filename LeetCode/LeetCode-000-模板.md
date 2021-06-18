@@ -23,3 +23,6 @@ public class HelloWorld{
   }
 }
 ```
+
+> 【每日寄语】 *寄* 
+

@@ -14,7 +14,7 @@
 
 > 如果是负数，直接返回false；
 >
-> 否则，将整数转化为字符串，左右2个指针left和right同时从前后开始遍历，如果相应left和right的值不同，则返回false，知道left大于right，遍历结束。
+> 否则，将整数转化为字符串，左右2个指针left和right同时从前后开始遍历，如果相应left和right的值不同，则返回false，直到left大于right，遍历结束。
 
 ```java
 public class Solution {

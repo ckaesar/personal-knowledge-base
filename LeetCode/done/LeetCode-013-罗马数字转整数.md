@@ -25,18 +25,38 @@
 > 链接：https://leetcode-cn.com/problems/roman-to-integer/
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-###### 解法一：解法一
+###### 解法一：从大到小取值
 
-> 描述
-
-###### 解法二：解法二
-
-> 描述
+> 利用**String**的**startsWith()**方法，按照罗马数字的大小取值，将对应的数字累加起来，就得到了最终的结果。
+>
+> 参考题目：**LeetCode-013-罗马数字转整数**，和这个题目处理过程相反。
 
 ```java
-public class HelloWorld{
-  public static void main(String[] args) {
-    System.out.println("hello world!");
-  }
+public class Solution {
+
+    public static int romanToInt(String s) {
+        // 所有可能的取值
+        int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        // 对应的罗马数字表示
+        String[] romans = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        int result = 0;
+        for (int i = 0; i < romans.length && s.length() > 0; i++) {
+            String roman = romans[i];
+            int value = values[i];
+            while (s.startsWith(roman)) {
+                s = s.substring(roman.length());
+                result += value;
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(romanToInt("III"));
+        System.out.println(romanToInt("IV"));
+        System.out.println(romanToInt("IX"));
+        System.out.println(romanToInt("LVIII"));
+        System.out.println(romanToInt("MCMXCIV"));
+    }
 }
 ```
