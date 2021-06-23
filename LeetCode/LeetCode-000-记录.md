@@ -1,5 +1,9 @@
 #### 第一时间没有想法的题目
 
+LeetCode-005 不会做。
+
 LeetCode-022 不会做，看看答案再自己写。
 
 LeetCode-028 不会用KMP算法解决这道题。
+
+LeetCode-029 不会做。
