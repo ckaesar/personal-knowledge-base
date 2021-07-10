@@ -13,19 +13,30 @@
 > 链接：https://leetcode-cn.com/problems/number-of-1-bits/
 > 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-###### 解法一：解法一
+###### 解法一：遍历
 
-> 描述
-
-###### 解法二：解法二
-
-> 描述
+> 首先，用`Integer.toBinaryString(num)`方法将n转化为二进制字符串binaryString；
+>
+> 然后，遍历字符串binaryString的每一个字符，判断当前字符是否是'1'，如果是，则将result加1；
+>
+> 最后返回result即为二进制位中1的个数。
 
 ```java
-public class HelloWorld{
-  public static void main(String[] args) {
-    System.out.println("hello world!");
-  }
+public class LeetCode_191 {
+    public static int hammingWeight(int n) {
+        String binaryString = Integer.toBinaryString(n);
+        int result = 0;
+        for (char c : binaryString.toCharArray()) {
+            if (c == '1') {
+                result++;
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(hammingWeight(20));
+    }
 }
 ```
 
