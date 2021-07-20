@@ -17,8 +17,6 @@
 > 首先，记录一个全局的结果result。然后调用一个递归方法，递归方法包含2个参数，一个是当前的节点root，一个是当前的深度curDepth，如果root为空，则判断curDepth是否大于result，如果大于，更新result为curDepth；如果root不为空，则将curDepth加1，然后递归调用root的左右子节点，直到递归完成，返回result即为树的最大深度。
 
 ```java
-package com.kaesar.leetcode;
-
 public class LeetCode_104 {
     public static int result = 0;
 
